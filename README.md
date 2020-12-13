@@ -56,16 +56,17 @@ npm run start
 
  
 ### First build Docker image
- - docker build -t iot-dashboard -f Dockerfile .
-
+```
+docker build -t iot-dashboard -f Dockefile .
+```
 ### For development
-
- - docker run -d -p 3000:3000 -v $PWD:/usr/src/app --name iot-dashboard -ti iot-dashboard /bin/bash
-
+```
+docker run -d -p 3000:3000 -v $PWD:/usr/src/app --name iot-dashboard -ti iot-dashboard /bin/bash
+```
 ### For Production
-
- - docker run --rm -p 3000:3000 --name iot-dashboard -ti iot-dashboard
-
+```
+docker run --rm -p 3000:3000 --name iot-dashboard -ti iot-dashboard
+```
 ## Author
 
  
