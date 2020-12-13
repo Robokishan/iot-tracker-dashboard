@@ -1,0 +1,33 @@
+{
+    "DBURL" : "https://gateway.oizom.com/",
+    "DBURL_VERSION" : "https://gateway.oizom.com/",
+    "WSURL": "https://gateway.oizom.com/",
+    "ORG_URL": "assets/oizom-about_org.png",
+    "LOCAL": false,
+    "LICENCE": [
+        {
+            "name": "Software Owner Details",
+            "value": "Kakinada Smart City Corporation Limited"
+        },
+        {
+            "name": "Product Description",
+            "value": "Smart Solutions Software - Environmental Sensors"
+        },
+        {
+            "name": "Software License Quantity",
+            "value": "1"
+        },
+        {
+            "name": "Software License Period Validity",
+            "value": "Perpetual"
+        },
+        {
+            "name": "Device Node Support",
+            "value": "12"
+        },
+        {
+            "name": "Reseller Partner",
+            "value": "Sterlite Technologies Limited"
+        }
+    ]
+}

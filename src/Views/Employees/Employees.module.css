@@ -1,0 +1,131 @@
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 79px);
+    align-items: stretch;
+}
+.header-wrapper{
+    border-bottom: 1px solid #f1f1f1;
+    top:0px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden !important;
+    min-height: 70px;
+    width: 100%;
+    z-index:2000;
+    background: white;
+}
+
+.loader-wrapper{
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Black background with opacity */
+    cursor: pointer; /* Add a pointer on hover */
+    z-index: 19999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    height: calc(100vh - 79px);
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.loaderscreen{
+    position: absolute;
+}
+
+.device-detail-form .datepicker Label{
+    font-size: 1em;
+    float: left;
+    margin-left: 10px;
+    margin-top:10px;
+}
+
+
+.device-detail-form .datepicker Input{
+    margin-left: 10px;
+}
+.device-detail-form  .button{
+    
+}
+
+.device-detail-form .datepicker{
+    margin: 10px;
+    display: inline-block;
+}
+.device-detail-form{
+    white-space : nowrap; /* this does the trick */
+    overflow : hidden; /* this prevents the grey divs from overflowing */
+    display: inline-block;
+}
+.user-side{
+    float: right;
+    margin: 10px;
+    min-height: 40px;
+}
+
+
+.content-wrapper {
+    margin-top: 2px;
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.device-detail-form .deviceSelection{
+    margin: 10px;
+    width: 100%;
+    max-width: 130px;
+    float: left;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.device-detail-form Input{
+    width: 100%;
+    max-width: 180px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.zoomSelection{
+    margin: 10px;
+    width: 100%;
+    float: right;
+    max-width: 130px;
+}
+
+.bottom-wrapper{
+    height: 5vh;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    color: white;
+}
+@media screen and (max-width: 700px) {
+    .header-wrapper{
+        overflow: hidden !important;
+        position: relative;
+        width: 100%;
+        z-index:2000;
+        background: #f1f1f1;
+    }
+    .bottom-wrapper{
+        position: relative;
+        width: 100%;
+        background-color: white;
+        color: white;
+    }
+  }

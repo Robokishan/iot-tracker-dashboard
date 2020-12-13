@@ -1,0 +1,72 @@
+{
+    "1002": {
+        "HEADER" : "Dashboard",
+        "IMAGE_URL": ["assets/modules-info/DASHBOARD1.png", "assets/modules-info/DASHBOARD2.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "DASHBOARD Module Inquiry",
+        "EMAIL_BODY": "Hello Oizom Team, %0D%0A %0D%0A ",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>Dashboard allows users to visualize environmental data through interactive charts.</li><li>It also showcases pollution visualization in the form of <strong>Pollution Rose</strong> and <strong>Wind Rose charts</strong>.</li><li>The <strong>real-time data</strong> is displayed over the dashboard along with <strong>hourly</strong> and <strong>weekly data</strong>.</li><li>It also provide <strong>download hourly data</strong> in csv format.</li></ul>"
+    },
+    "1004": {
+        "HEADER" : "Report",
+        "IMAGE_URL": ["assets/modules-info/REPORT1.png", "assets/modules-info/REPORT2.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "REPORT Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>Oizom data platform can provide <strong>automated / on-demand printable reports</strong> as per the industry standards.</li><li>These reports can be activated on a <strong>daily, weekly</strong> and <strong>monthly</strong> basis for multiple email recipients.</li><li>Reports module also provides <strong>Quick reports</strong> for any date.</li></ul>"
+    },
+    "1005": {
+        "HEADER" : "Analytics",
+        "IMAGE_URL": ["assets/modules-info/ANALYTICS1.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "ANALYTICS Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>The Analytics module provides mainly three analytics criteria - <strong>device comparison, parameter comparison</strong> and <strong>chronological comparison</strong>.</li><li>The Device Comparison allows you to <strong>compare the performance of two or more installed equipments</strong> for the selected period.</li><li>The Parameter Comparison allows you to <strong>compare the multiple parameters of one equipment</strong> for the selected period.</li><li>Chronological Comparison analyzes the parameter data of equipment for <strong>different time slots</strong>.</li></ul>"
+    },
+    "1006": {
+        "HEADER" : "Display",
+        "IMAGE_URL": ["assets/modules-info/DISPLAY1.png", "assets/modules-info/DISPLAY2.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "DISPLAY Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>Using various data publishing mediums, environmental insights can be served to the mass audience at once.</li><li>The data publishing is possible through <strong>outdoor LED Display Boards, TV Screens</strong> and <strong>integrable Web Widget</strong>.</li><li>The data publishing can spread environmental awareness among citizens and enable them to take data driven health actions.</li></ul>"
+    },
+    "1007": {
+        "HEADER" : "Alert",
+        "IMAGE_URL": ["assets/modules-info/ALERT1.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "ALERT Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>The terminal can trigger actionable alerts in the form of <strong>push notifications, email notifications</strong> and <strong>SMS notifications</strong> for the users.</li><li>This feature drastically reduces the problem-to-solution time by taking data-driven actions.</li><li>User can able to add their own <strong>alert configuration</strong>.</li></ul>"
+    },
+    "1009": {
+        "HEADER" : "Cluster",
+        "IMAGE_URL": ["assets/modules-info/CLUSTER1.png"],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "CLUSTER Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>Cluster module can <strong>average your selected devices data</strong> and shows in eye catching <strong>map view</strong> and <strong>table view</strong>.</li><li>This feature makes easy to analyze the over all environmental status.</li><li>User can able to <strong>download historical data</strong> for any of clusters.</li><li>User can able to add their own cluster with selected devices.</li></ul>"
+    },
+    "1010": {
+        "HEADER" : "Heatmap",
+        "IMAGE_URL": [],
+        "EMAIL": "contact@oizom.com",
+        "EMAIL_CC": "hello@oizom.com",
+        "EMAIL_SUBJECT": "Heatmap Module Inquiry",
+        "EMAIL_BODY": "Hello OIZOM Support,%0D%0A %0D%0A",
+        "CONTACT": ["+918866660025", "+918866660082"],
+        "BODY": "<ul><li>Heat map provides eye bird view of <strong>pollution map</strong>, where user can able to know pollution details for every 100 meter of area.</li></ul>"
+    }
+}

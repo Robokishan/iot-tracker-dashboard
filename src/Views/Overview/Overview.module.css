@@ -1,0 +1,118 @@
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* height is hard coded for now because of some problem */
+    flex:1;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+.header-wrapper{
+    flex:0;
+    border-bottom: 1px solid #f1f1f1;
+    top:0px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden !important;
+    min-height: 70px;
+    width: 100%;
+    z-index:900;
+    background: white;
+    display: inline-block;
+}
+
+.wrapper{
+    /* hard coded  */
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.loaderscreen{
+    position: fixed; /* Sit on top of the page content */
+    width: 50%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    flex: 1;
+    bottom: 0;
+    cursor: pointer; /* Add a pointer on hover */
+    z-index: 19999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.deviceSelection{
+    margin: 10px;
+    width: 100%;
+    max-width: 130px;
+    float: left;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.zoomSelection{
+    margin: 10px;
+    width: 100%;
+    float: right;
+    margin: 10px;
+    max-width: 130px;
+}
+
+.bottom-wrapper{
+    height: 5vh;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    color: white;
+}
+@media screen and (max-width: 700px) {
+    .header-wrapper{
+        overflow: hidden !important;
+        position: relative;
+        width: 100%;
+        background: #f1f1f1;
+    }
+    .bottom-wrapper{
+        position: relative;
+        width: 100%;
+        background-color: white;
+        color: white;
+    }
+  }
+  
+  @media screen and (max-width: 300px) {
+    .header-wrapper{
+      
+    }
+  }
+
+/* @media screen and (max-width: 700px) {
+    .content-wrapper{
+        margin-left: 0px;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
+  }
+  
+  @media screen and (max-width: 300px) {
+    .content-wrapper{
+        margin-left: 200px;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
+  } */
