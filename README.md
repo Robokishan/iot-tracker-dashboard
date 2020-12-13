@@ -51,17 +51,6 @@ npm run start
 
 ```
 
-  
-
-## Run tests
-
-  
-
-```sh
-
-npm run test
-
-```
 
 # Docker build
 
