@@ -75,7 +75,7 @@ npm run test
 
 ### For Production
 
- - docker run --rm -p 3000:3000 --name xoxo-dashboard -ti xoxo-dashboard
+ - docker run --rm -p 3000:3000 --name iot-dashboard -ti iot-dashboard
 
 ## Author
 
