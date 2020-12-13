@@ -56,7 +56,7 @@ npm run start
 
  
 ### First build Docker image
- - docker build -t iot-dashboard -f Dockefile .
+ - docker build -t iot-dashboard -f Dockerfile .
 
 ### For development
 
