@@ -15,16 +15,40 @@ class Setting extends React.Component {
             Loading: true,
             currentDeviceIndex: 0,
             addDeviceUsername:"",
-            showModal: false,
-            addModal:false
+            editAssetModal: false,
+            addAssetModal:false
         }
-        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
         this.toggleAdddevice = this.toggleAdddevice.bind(this);
         this.addDevice = this.addDevice.bind(this);
         this.sendRequestAdd = this.sendRequestAdd.bind(this);
+        this.fetchDevices = this.fetchDevices.bind(this);
+    }
+
+    removeDevice = async(asset_id)=>{
+        let Headers = {
+            'authorization': `Bearer ${getToken()}`
+        }
+        const request = {
+            method: 'delete',
+            url: `${process.env.REACT_APP_XOXO_URL}${process.env.REACT_APP_XOXO_DELETE_ASSET_API_PATH}`,
+            headers:Headers,
+            params:{
+                "asset_id":asset_id
+            }
+        }
+        console.log("request",request)
+        try {
+            console.log("ID Removed", asset_id);
+            const response = await axios(request);
+        } catch (error) {
+            console.error("Delete error", error);
+        }
+        this.fetchDevices();
     }
 
     fetchDevices = async() => {
+        this.setState({ Loading: true })
         let token = getToken();
         let Headers = {
             'authorization': "Bearer " + token
@@ -49,7 +73,8 @@ class Setting extends React.Component {
                     asset_name: device.asset_name,
                     asset_type: device.asset_type,
                     asset_username: device.asset_username,
-                    added_on: device.added_on
+                    added_on: device.added_on,
+                    avatar: device.avatar
                 }
                 deviceList.push(data);
             })
@@ -63,12 +88,39 @@ class Setting extends React.Component {
             });
             console.log(error);
         }
+        this.setState({ Loading: false })
     }
 
     async componentDidMount() {
-        this.setState({ Loading: true })
+        // this.setState({ Loading: true })
         await this.fetchDevices();
-        this.setState({ Loading: false });
+        // this.setState({ Loading: false });
+    }
+    editAsset = async(e, asset_id) => {
+        e.preventDefault()
+        let asset_name = e.target.asset_name.value;
+        let asset_type = e.target.asset_type.value;
+        console.log("asset_id",asset_id);
+        let Headers = {
+            'authorization': `Bearer ${getToken()}`
+        }
+        const request = {
+            method: 'put',
+            url: `${process.env.REACT_APP_XOXO_URL}${process.env.REACT_APP_XOXO_PUT_ASSET_UPDATE_API_PATH}${asset_id}`,
+            headers:Headers,
+            data: {
+                "asset_name":asset_name,
+                "assetType":asset_type
+            }
+        }
+        console.log("request",request)
+        try {
+            console.log(asset_name, asset_type);
+            const response = await axios(request);
+        } catch (error) {
+            console.error("put error", error);
+        }
+        this.fetchDevices();
     }
     sendRequestAdd = async(e) => {
         e.preventDefault();
@@ -85,7 +137,7 @@ class Setting extends React.Component {
                 'authorization': "Bearer " + token
             }
             const payload = {
-                "assetname":assetUsername
+                "asset_username":assetUsername
             }
             const request = {
                 method:'post',
@@ -113,32 +165,28 @@ class Setting extends React.Component {
         );
     }
 
-    openDevice(index, deviceId) {
-        if (deviceId === this.state.assetList[index].deviceId) {
-            // console.log("success", index, deviceId);
+    openDevice(index, assetid) {
+        if (assetid === this.state.assetList[index].asset_id) {
             this.setState({
-                showModal: true,
+                editAssetModal: true,
                 currentDeviceIndex: index
             })
-        }
-        else {
-            // console.log("index", index, deviceId, this.state.assetList[index].deviceId);
         }
     }
     addDevice() {
         this.setState({
-            addModal: true
+            addAssetModal: true
         })
     }
 
-    toggleModal() {
+    toggleEditModal() {
         this.setState({
-            showModal: !this.state.showModal
+            editAssetModal: !this.state.editAssetModal
         })
     }
     toggleAdddevice(){
         this.setState({
-            addModal: !this.state.addModal
+            addAssetModal: !this.state.addAssetModal
         })
     }
     handleaddDeviceUsername(event) { this.setState({ addDeviceUsername: event.target.value }); }
@@ -171,34 +219,36 @@ class Setting extends React.Component {
     }
 
     render() {
-    
         const modal = this.state.assetList.length > 0 ?
             <div>
-                <Modal isOpen={this.state.showModal}>
-                    <ModalHeader toggle={this.toggleModal}>Edit</ModalHeader>
+                <Modal isOpen={this.state.editAssetModal} toggle={this.toggleEditModal}>
+                <ModalHeader toggle={this.toggleEditModal}>Edit: {this.state.assetList[this.state.currentDeviceIndex].asset_username}</ModalHeader>
+                <Form onSubmit={(e) => { 
+                    this.editAsset(e, this.state.assetList[this.state.currentDeviceIndex].asset_id)
+                    this.toggleEditModal();
+                    }}>
                     <ModalBody>
-                        <Form>
+                        <div className={Styles.editTexts}>
+                            <Label style={{"display":"none"}} name="asset_id" id="asset_id" value={this.state.assetList[this.state.currentDeviceIndex].asset_id}></Label>
                         <FormGroup>
-                            <Label>Device</Label>
-                            <Input value={this.state.assetList[this.state.currentDeviceIndex].deviceId} className={Styles["email"]} type="text" placeholder="Device"/>
+                            <Label>Device Name</Label>
+                            <Input name="asset_name" id="asset_name" defaultValue={this.state.assetList[this.state.currentDeviceIndex].asset_name} className={Styles["email"]} type="text" placeholder="Device"/>
                         </FormGroup>
-                        <FormGroup>
-                            <Label>Name</Label>
-                            <Input value={this.state.assetList[this.state.currentDeviceIndex].label}  invalid={this.state.error} className={Styles["email"]} type="text" placeholder="Name"/>
+                        <FormGroup >
+                            <Label>Device Type</Label>
+                            <Input name="asset_type" id="asset_type" defaultValue={this.state.assetList[this.state.currentDeviceIndex].asset_type}  invalid={this.state.error} className={Styles["email"]} type="text" placeholder="Name"/>
                         </FormGroup>
-                        </Form>
-                        {this.state.assetList[this.state.currentDeviceIndex].asset_username}
+                        </div>
+                        <Button variant="danger" type="submit">Save</Button>{' '}
+                        <Button variant="primary" onClick={this.toggleEditModal}>Cancel</Button>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button variant="danger" onClick={this.toggleModal}>Save</Button>{' '}
-                        <Button variant="primary" onClick={this.toggleModal}>Cancel</Button>
-                    </ModalFooter>
+                    </Form>
                 </Modal>
             </div> : null;
-        const addDeviceModal = this.state.addModal == true  ? 
+        const addDeviceModal = this.state.addAssetModal == true  ? 
         <div>
-            <Modal isOpen={this.state.addModal}>
-                <ModalHeader toggle={this.toggleModal}>Edit</ModalHeader>
+            <Modal isOpen={this.state.addAssetModal} toggle={this.toggleAdddevice}>
+                <ModalHeader toggle={this.toggleAdddevice}>Edit</ModalHeader>
                 <ModalBody>
                     <Form>
                     <FormGroup>
@@ -217,16 +267,23 @@ class Setting extends React.Component {
     
         var assets = this.state.assetList.length > 0 ? this.state.assetList.map((asset, index) => (
             <tr>
-                <td align="center">
+                <td align="center" className={Styles.buttonContainer}>
                     <Button
                         variant="primary"
                         className={Styles.editbutton}
-                        onClick={this.openDevice.bind(this, index, asset.deviceId)} disabled>
+                        onClick={this.openDevice.bind(this, index, asset.asset_id)}>
                         Edit
+                    </Button>
+                    <Button
+                        variant="danger"
+                        className={Styles.removeButton}
+                        onClick={this.removeDevice.bind(this, asset.asset_id)}>
+                        Remove
                     </Button>
                 </td>
                 <td>{asset.asset_username}</td>
                 <td>{asset.asset_name}</td>
+                <td>{asset.asset_type}</td>
                 <td>{this.epochTodt(asset.added_on)}</td>
             </tr>
         )) : <td colSpan="4" align="center" >No Assets added</td>
@@ -234,12 +291,13 @@ class Setting extends React.Component {
             <React.Fragment>
                 <Button variant="success" className={Styles["add-button"]} onClick={this.toggleAdddevice}> ➕Add device</Button>
                 {this.state.Loading && this.loaderscreen()}
-                <Table striped hover>
+                <Table striped borderless responsive hover>
                     <thead>
                         <tr>
                             <th></th>
                             <th>Username</th>
                             <th>Name</th>
+                            <th>Type</th>
                             <th>Added</th>
                         </tr>
                     </thead>

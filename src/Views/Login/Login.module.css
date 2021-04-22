@@ -9,6 +9,10 @@
     margin: auto;
     height: 100%;
   }
+
+  .login-form input{
+    
+  }
   .signuplinks{
     margin-top: 5px;
   }
@@ -21,6 +25,18 @@
     align-items: center;
     background-color: #ffffff;
   }
+  .password-container{
+    position:relative;
+    /* padding-right: 0px; */
+  }
+  .password-container .showPassword {
+    cursor: pointer;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 10px;
+    top: 5px;
+  }
   .showPassword{
     color: #ffffff;
     padding: 4px 8px;
@@ -32,6 +48,7 @@
   
   .form-wrapper {
     width: 400px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     padding: 20px 40px;
@@ -71,12 +88,12 @@
     /* outline: none; */
     border: 1px solid #cfcfcf;
   }
-/* 
+
   .email{
     outline: none;
     -webkit-appearance:none;
     border: none;
-  } */
+  }
   
   input::placeholder {
     font-size: 1.2em;
@@ -93,33 +110,6 @@
     color: red;
     font-size: 0.75em;
     display: relative;
-  }
-  
-  .firstName {
-    margin-right: 1%;
-  }
-  
-  .lastName {
-    margin-left: 1%;
-  }
-  
-  .firstName,
-  .lastName,
-  .email,
-  .password {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .firstName,
-  .lastName {
-    width: 49%;
-  }
-  
-  .email,
-  .password {
-    width: 100%;
   }
   
   .createAccount {

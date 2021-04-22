@@ -9,8 +9,12 @@
     top:0px;
     position: relative;
     padding: 10px;
-    overflow: hidden !important;
-    min-height: 70px;
+    display: flex;
+    flex-direction:  column;
+
+    overflow: auto;
+    /* overflow-y: hidden !important; */
+    /* min-height: 70px; */
     width: 100%;
     z-index:2000;
     background: white;
@@ -47,30 +51,33 @@
     position: absolute;
 }
 
-.device-detail-form .datepicker Label{
+.header-wrapper .datepicker Label{
     font-size: 1em;
     float: left;
+    width: fit-content;
     margin-left: 10px;
     margin-top:10px;
 }
 
+.header-wrapper .datepicker{
+    margin: 10px;
+    display: flex;
+    flex-direction: wrap;
 
-.device-detail-form .datepicker Input{
+    /* max-height: 10px; */
+}
+
+.header-wrapper .datepicker Input{
     margin-left: 10px;
 }
-.device-detail-form  .button{
-    
+.device-detail-form  Button{
+    float: right;
+    margin-left: 30px;
+    margin-top: 10px;
+    height: fit-content;
+    /* flex-grow: 1; */
 }
 
-.device-detail-form .datepicker{
-    margin: 10px;
-    display: inline-block;
-}
-.device-detail-form{
-    white-space : nowrap; /* this does the trick */
-    overflow : hidden; /* this prevents the grey divs from overflowing */
-    display: inline-block;
-}
 .user-side{
     float: right;
     margin: 10px;
@@ -86,7 +93,7 @@
     width: 100%;
 }
 
-.device-detail-form .deviceSelection{
+.deviceSelection{
     margin: 10px;
     width: 100%;
     max-width: 130px;
@@ -94,7 +101,7 @@
     box-shadow: 2px 2px 5px grey;
 }
 
-.device-detail-form Input{
+.header-wrapper Input{
     width: 100%;
     max-width: 180px;
     box-shadow: 2px 2px 5px grey;
@@ -114,13 +121,38 @@
     background-color: white;
     color: white;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1076px) {
+    .header-wrapper Button{
+        flex-grow: 1;
+        margin-left: 3px;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    .deviceSelection{
+        margin: 10px;
+        width: 100%;
+        text-align-last:center;
+        max-width: 800px;
+        float: left;
+        box-shadow: 2px 2px 5px rgb(238, 0, 0);
+    }
+
     .header-wrapper{
-        overflow: hidden !important;
+        display: flex;
+        /* overflow-y: scroll; */
+        overflow: visible;
+        flex-direction: column;
         position: relative;
         width: 100%;
         z-index:2000;
-        background: #f1f1f1;
+        background: #ffffff;
+    }
+    .header-wrapper button {
+        margin-top: 10px;
+        width: 100%;
+        margin-left: 5px;
+        padding-bottom: 10px;
     }
     .bottom-wrapper{
         position: relative;

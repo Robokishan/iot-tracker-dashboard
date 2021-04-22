@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Row, Form,InputGroup, FormGroup, Label, Input } from 'reactstrap';
 import LoaderScreen from '../Loader/Loader';
 import axios from 'axios';
 import { setToken, saveUser,saveUserId} from '../../utils/storage';
@@ -32,16 +32,20 @@ class Login extends Component {
       return (
         <div className={Style["wrapper"]}>
           <div className={Style["form-wrapper"]}>
-            <Form className={Style["login-form"]} >
+            <Form className={`${Style["login-form"]} mb-3`} >
               <h1>Login</h1>
               <FormGroup>
                 <Label> Email </Label>
-                <Input invalid={this.state.error} className={Style["email"]} type="email" placeholder="Email" onChange={this.handleNameChange.bind(this)} />
+                <InputGroup className="input-group-alternative">
+                <Input invalid={this.state.error} type="email" placeholder="Email" onChange={this.handleNameChange.bind(this)} />
+                </InputGroup>
               </FormGroup>
               <FormGroup>
                 <Label> Password </Label>
+                <div className={Style["password-container"]}>
                 <Input invalid={this.state.error} className={Style["email"]} type={passwordFieldType} placeholder="Password" onChange={this.handlePasswordChange.bind(this)} />
-                <span className={Style["showPassword"]} onClick={this.changePasswordFieldType.bind(this)}>{this.state.showPassword === true ? 'Hide' : 'Show'}</span>
+                <Input className={Style["showPassword"]} type="checkbox" onClick={this.changePasswordFieldType.bind(this)}/>
+                </div>
               </FormGroup>
               {errorMsg}
               <Button type="submit" className="btn-lg btn-dark btn-block" onClick={this.onSubmit} >Login</Button>
@@ -51,8 +55,8 @@ class Login extends Component {
                 <a href="/forgotPassword">Forgot Password</a>
               </div>
             </Form>
-          </div>
-        </div>
+         </div>
+      </div>
       );
     }
     else {

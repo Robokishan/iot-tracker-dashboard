@@ -18,6 +18,10 @@
 .assetgroup{
     
 }
+.editTexts{
+    display: flex;
+    flex-direction: column;
+}
 .add-button{
     margin:10px
 }
@@ -26,8 +30,16 @@
     flex-direction: row;
     justify-content: space-around;
 }
-.editbutton{
+.buttonContainer {
+    display: flex;
+}
+.editbutton {
     margin-left: 10px;
+    flex-grow: 1;
+}
+.removeButton { 
+    margin-left: 10px;
+    flex-grow: 1;
 }
 
 .noassets{

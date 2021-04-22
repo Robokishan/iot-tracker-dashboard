@@ -222,7 +222,7 @@ class Employees extends React.Component {
             return (
                 <div className={Styles["main-wrapper"]} >
                     <div className={Styles["header-wrapper"]}>
-                        <Form inline className={Styles["device-detail-form"]} onSubmit={this.onSubmit}>
+                        <Form className={Styles["device-detail-form"]} onSubmit={this.onSubmit}>
                             <Input className={Styles["deviceSelection"]} onChange={this.handleCenterChange.bind(this)} type="select" name="Device" id="deviceSelector">
                                 {deviceList}
                             </Input>
