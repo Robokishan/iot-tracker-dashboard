@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App-body{
 
 }
@@ -85,6 +90,7 @@ input.error {
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
+  white-space: normal;
 }
 
 .createAccount button:hover {

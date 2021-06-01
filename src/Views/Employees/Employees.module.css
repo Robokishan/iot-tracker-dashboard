@@ -2,22 +2,78 @@
     display: flex;
     flex-direction: column;
     height: calc(100vh - 79px);
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 .header-wrapper{
+    padding:5px 20px ;
     border-bottom: 1px solid #f1f1f1;
     top:0px;
-    position: relative;
-    padding: 10px;
     display: flex;
-    flex-direction:  column;
+    flex-direction:  row;
+    background: white;   
+}
 
-    overflow: auto;
-    /* overflow-y: hidden !important; */
-    /* min-height: 70px; */
+.deviceSelection{ 
+    margin: 10px;
+    min-width: 10%;
+    max-width: fit-content;
+}
+
+.header-wrapper .datepicker{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: wrap;
+}
+
+.header-wrapper .datepicker Label{
+    margin-top: 5px;
+    white-space: nowrap;
+    font-size: 1em;
+    margin-right: 4px;
+}
+
+.header-wrapper .datepicker Input{
+    margin: 5px;
+    min-width: 10%;
+    max-width: fit-content;
+}
+
+.header-wrapper Button {
+    margin: 10px;
+    align-items: center;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* .header-wrapper Input{
     width: 100%;
-    z-index:2000;
-    background: white;
+    max-width: 180px;
+    box-shadow: 2px 2px 5px grey;
+} */
+
+.content-wrapper {
+    margin-top: 2px;
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.zoomSelection{
+    margin: 10px;
+    width: 100%;
+    float: right;
+    max-width: 130px;
+}
+
+.bottom-wrapper{
+    height: 5vh;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    color: white;
 }
 
 .loader-wrapper{
@@ -36,7 +92,7 @@
     justify-content: center;
     align-items: center;
 }
-.wrapper{
+.loaderscreen-wrapper{
     height: calc(100vh - 79px);
     width: 100%;
     z-index: 9999;
@@ -51,82 +107,6 @@
     position: absolute;
 }
 
-.header-wrapper .datepicker Label{
-    font-size: 1em;
-    float: left;
-    width: fit-content;
-    margin-left: 10px;
-    margin-top:10px;
-}
-
-.header-wrapper .datepicker{
-    margin: 10px;
-    display: flex;
-    flex-direction: wrap;
-
-    /* max-height: 10px; */
-}
-
-.header-wrapper .datepicker Input{
-    margin-left: 10px;
-}
-.device-detail-form  Button{
-    float: right;
-    margin-left: 30px;
-    margin-top: 10px;
-    height: fit-content;
-    /* flex-grow: 1; */
-}
-
-.user-side{
-    float: right;
-    margin: 10px;
-    min-height: 40px;
-}
-
-
-.content-wrapper {
-    margin-top: 2px;
-    overflow: auto;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.deviceSelection{
-    margin: 10px;
-    width: 100%;
-    max-width: 130px;
-    float: left;
-    box-shadow: 2px 2px 5px grey;
-}
-
-.header-wrapper Input{
-    width: 100%;
-    max-width: 180px;
-    box-shadow: 2px 2px 5px grey;
-}
-
-.zoomSelection{
-    margin: 10px;
-    width: 100%;
-    float: right;
-    max-width: 130px;
-}
-
-.bottom-wrapper{
-    height: 5vh;
-    position: relative;
-    width: 100%;
-    background-color: white;
-    color: white;
-}
-@media screen and (max-width: 1076px) {
-    .header-wrapper Button{
-        flex-grow: 1;
-        margin-left: 3px;
-    }
-}
 @media screen and (max-width: 768px) {
     
     .deviceSelection{
@@ -148,11 +128,12 @@
         z-index:2000;
         background: #ffffff;
     }
-    .header-wrapper button {
+    .header-wrapper Button {
         margin-top: 10px;
         width: 100%;
         margin-left: 5px;
         padding-bottom: 10px;
+        
     }
     .bottom-wrapper{
         position: relative;

@@ -222,7 +222,6 @@ class Employees extends React.Component {
             return (
                 <div className={Styles["main-wrapper"]} >
                     <div className={Styles["header-wrapper"]}>
-                        <Form className={Styles["device-detail-form"]} onSubmit={this.onSubmit}>
                             <Input className={Styles["deviceSelection"]} onChange={this.handleCenterChange.bind(this)} type="select" name="Device" id="deviceSelector">
                                 {deviceList}
                             </Input>
@@ -235,7 +234,7 @@ class Employees extends React.Component {
                                 <Input value={this.state.lte} type="date" name="lte" id="lte" onChange={this.onDatePickerChanger} placeholder="date placeholder" />
                             </div>
                             <Button type="submit" >Show Data</Button>
-                        </Form>
+                        
                     </div>
                     <div className={Styles["content-wrapper"]}>
                         <GoogleMap centerMarker={this.state.centerMarker} bound={this.state.showBound} markersData={this.state.markers} />
@@ -245,7 +244,7 @@ class Employees extends React.Component {
         }
         else {
             return (
-                <div className={Styles["wrapper"]}>
+                <div className={Styles["loaderscreen-wrapper"]}>
                     <div className={Styles["loaderscreen"]}>
                         <LoaderScreen />
                     </div>
