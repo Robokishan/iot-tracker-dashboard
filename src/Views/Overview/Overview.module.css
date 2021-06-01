@@ -3,13 +3,14 @@
     flex-direction: column;
     /* height is hard coded for now because of some problem */
     flex:1;
-    position:fixed;
+    
     width: 100%;
     height: 100%;
     align-items: stretch;
 }
 .header-wrapper{
-    flex:0;
+    /* v1 */
+    /* flex:0;
     border-bottom: 1px solid #f1f1f1;
     top:0px;
     position: relative;
@@ -19,7 +20,15 @@
     width: 100%;
     z-index:900;
     background: white;
-    display: inline-block;
+    display: inline-block; */
+
+    /* v2 */
+    padding:5px 20px ;
+    border-bottom: 1px solid #f1f1f1;
+    top:0px;
+    display: flex;
+    flex-direction:  row;
+    background: white; 
 }
 
 .wrapper{

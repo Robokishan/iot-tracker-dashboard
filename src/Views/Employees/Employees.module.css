@@ -1,7 +1,7 @@
 .main-wrapper{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 79px);
+    height: 100%;
     /* align-items: stretch; */
 }
 .header-wrapper{
