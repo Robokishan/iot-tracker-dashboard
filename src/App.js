@@ -5,7 +5,7 @@ import Dashboard from './Views/Dashboard/Dashboard'
 import Protectedroute from './Views/Auth/Protected'
 import {  Switch , Route, withRouter,Redirect } from 'react-router-dom'
 import NotFound from './Views/NotFound/NotFound'
-
+import './index.css';
 class App extends Component {
 
   constructor(props) {
@@ -25,7 +25,6 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="App-body" >
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
@@ -35,7 +34,6 @@ class App extends Component {
           <Protectedroute path="/dashboard/:dashid" exact component={Dashboard} />
           <Route path="*" component={NotFound} />
         </Switch>
-        </div>
       </React.Fragment>
     );
   }

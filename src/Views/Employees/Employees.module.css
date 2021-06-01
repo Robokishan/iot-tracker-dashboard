@@ -12,15 +12,18 @@
     flex-direction:  row;
     background: white;   
 }
-
-.deviceSelection{ 
-    margin: 10px;
-    min-width: 10%;
-    max-width: fit-content;
+.header-wrapper .deviceSelection-wrapper {
+    transform: scale(0.9);
+    min-width: 6%;
 }
 
+.header-wrapper .fill {
+    flex-grow: 1;
+}
 .header-wrapper .datepicker{
-    margin: 5px;
+    transform: scale(0.9);
+    min-width: 6%;
+    margin: auto 0 auto 0; /* magic */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,23 +31,31 @@
 }
 
 .header-wrapper .datepicker Label{
+    transform: scale(0.9);
     margin-top: 5px;
+    min-width: 6%;
     white-space: nowrap;
     font-size: 1em;
     margin-right: 4px;
 }
 
 .header-wrapper .datepicker Input{
-    margin: 5px;
+    transform: scale(0.9);
+    margin: auto 0 auto 0; /* magic */
     min-width: 10%;
     max-width: fit-content;
 }
 
 .header-wrapper Button {
-    margin: 10px;
+    transform: scale(0.9);
+    
+    margin: auto 0 auto 0; /* magic */
     align-items: center;
     white-space: nowrap;
     text-align: center;
+}
+.header-wrapper .fill{
+    flex-grow: 1;
 }
 
 /* .header-wrapper Input{

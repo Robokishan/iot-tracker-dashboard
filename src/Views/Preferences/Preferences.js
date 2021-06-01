@@ -267,7 +267,8 @@ class Setting extends React.Component {
     
         var assets = this.state.assetList.length > 0 ? this.state.assetList.map((asset, index) => (
             <tr>
-                <td align="center" className={Styles.buttonContainer}>
+                <td align="center" className={Styles.buttonContainer} >
+                    <div className={Styles.internalContainer} >
                     <Button
                         variant="primary"
                         className={Styles.editbutton}
@@ -280,6 +281,8 @@ class Setting extends React.Component {
                         onClick={this.removeDevice.bind(this, asset.asset_id)}>
                         Remove
                     </Button>
+                    
+                    </div>  
                 </td>
                 <td>{asset.asset_username}</td>
                 <td>{asset.asset_name}</td>
@@ -289,7 +292,10 @@ class Setting extends React.Component {
         )) : <td colSpan="4" align="center" >No Assets added</td>
         return (
             <React.Fragment>
+                <div className={Styles.prefcontainer}>
+                    <div>
                 <Button variant="success" className={Styles["add-button"]} onClick={this.toggleAdddevice}> ➕Add device</Button>
+                </div>
                 {this.state.Loading && this.loaderscreen()}
                 <Table striped borderless responsive hover>
                     <thead>
@@ -305,8 +311,17 @@ class Setting extends React.Component {
                         {assets}
                     </tbody>
                 </Table>
+                <div className={Styles.paginationContainer} >
+                    <div className={Styles.content}>
+                    <Button >Prev</Button>
+                    <span>Number</span>
+                    <Button>Next</Button> 
+                    </div>
+                </div>
                 {addDeviceModal}
                 {modal}
+
+                </div>
                 
             </React.Fragment>
         );

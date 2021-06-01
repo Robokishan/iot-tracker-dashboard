@@ -1,5 +1,8 @@
 .body-wrapper{
     overflow: hidden !important;
+    display: flex!important;
+    flex-direction: column;
+    height: 100%;
 }
 /* 70px */
 .header{ 
@@ -28,7 +31,9 @@
 }
 /* 730px */
 .content-wrapper{
-    max-height: 100%;
+    flex-grow: 10;
+    flex: 1 1 auto;
+    height: 100%;
     margin-left: 200px;
     overflow-y: hidden !important;
     overflow-x: hidden !important;

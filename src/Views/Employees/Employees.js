@@ -222,9 +222,11 @@ class Employees extends React.Component {
             return (
                 <div className={Styles["main-wrapper"]} >
                     <div className={Styles["header-wrapper"]}>
-                            <Input className={Styles["deviceSelection"]} onChange={this.handleCenterChange.bind(this)} type="select" name="Device" id="deviceSelector">
-                                {deviceList}
-                            </Input>
+                            <div className={Styles["deviceSelection-wrapper"]}>
+                                <Input className={Styles["deviceSelection"]} onChange={this.handleCenterChange.bind(this)} type="select" name="Device" id="deviceSelector">
+                                    {deviceList}
+                                </Input>
+                            </div>
                             <div className={Styles["datepicker"]}>
                                 <Label for="gte">Start Date</Label>
                                 <Input value={this.state.gte} type="date" name="gte" id="gte" onChange={this.onDatePickerChanger} placeholder="date placeholder" />
@@ -234,6 +236,8 @@ class Employees extends React.Component {
                                 <Input value={this.state.lte} type="date" name="lte" id="lte" onChange={this.onDatePickerChanger} placeholder="date placeholder" />
                             </div>
                             <Button type="submit" >Show Data</Button>
+                            <div className={Styles["fill"]} ></div>
+                            
                         
                     </div>
                     <div className={Styles["content-wrapper"]}>
