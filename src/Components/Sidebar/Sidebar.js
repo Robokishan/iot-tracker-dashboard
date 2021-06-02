@@ -22,7 +22,9 @@ class Sidebar extends React.Component{
                 );
               return null;
             })}
-      
+            <div className={Styles.details}>
+            <span  >Version 1.0.3</span>
+            </div>
             </div>
             </React.Fragment>
         );
