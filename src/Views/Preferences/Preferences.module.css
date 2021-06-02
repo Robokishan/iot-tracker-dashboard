@@ -90,3 +90,11 @@
 .noassets{
     text-align: center;
 }
+
+.nodevicefound{
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color:darkgray;
+    font-size: 2rem;
+}

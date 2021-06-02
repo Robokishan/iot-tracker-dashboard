@@ -297,34 +297,30 @@ class Setting extends React.Component {
                 <Button variant="success" className={Styles["add-button"]} onClick={this.toggleAdddevice}> ➕Add device</Button>
                 </div>
                 {this.state.Loading && this.loaderscreen()}
-                <div className={Styles.tablecontainer}>
-                <Table borderless hover>
-                    <thead>
-                        <tr>
-                            <th class="time" >Action</th>
-                            <th class="sticky-header">Username</th>
-                            <th class="sticky-header">Name</th>
-                            <th class="sticky-header">Type</th>
-                            <th class="sticky-header">Added</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        {assets}
-                        
-                    </tbody>
-                </Table>
-                </div>
+                    {
+                        this.state.assetList.length > 0 ? (
+                            <div className={Styles.tablecontainer}>
+                                <Table borderless hover>
+                                    <thead>
+                                        <tr>
+                                            <th class="time" >Action</th>
+                                            <th class="sticky-header">Username</th>
+                                            <th class="sticky-header">Name</th>
+                                            <th class="sticky-header">Type</th>
+                                            <th class="sticky-header">Added</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {assets}
+                                    </tbody>
+                                </Table>
+                            </div>
+                        ) : (
+                            <span className={Styles.nodevicefound} >No Device Found</span>
+                        )
+                    }
+                
+                
                 <div className={Styles.paginationContainer} >
                     <div className={Styles.content}>
                     <Button >Prev</Button>
