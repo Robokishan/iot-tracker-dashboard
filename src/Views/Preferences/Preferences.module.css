@@ -23,12 +23,23 @@
     margin:10px
 }
 .prefcontainer {
-    align-items: stretch;
+    /* align-items: stretch; */
     margin-bottom: 0;
     height: 100%;
     display: flex;
-    flex:1;
+    /* flex:1; */
     flex-direction: column;
+    padding-bottom: 10px;
+}
+.tablecontainer{ 
+    position: relative;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    /* border: 1px solid #CFCFCF; */
+    border-radius: 0px;
 }
 .paginationContainer {
     margin-top: auto;  
@@ -54,7 +65,12 @@
     display: flex;
     max-width:100%;
     white-space:nowrap;
-    flex-direction: row;   
+    flex-direction: row;  
+    left: 0;
+  z-index: 1;
+  position: sticky;
+  background-color: white;
+  position: sticky;
 }
 
 .buttonContainer .internalContainer {

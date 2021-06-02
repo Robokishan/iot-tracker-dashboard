@@ -297,20 +297,34 @@ class Setting extends React.Component {
                 <Button variant="success" className={Styles["add-button"]} onClick={this.toggleAdddevice}> ➕Add device</Button>
                 </div>
                 {this.state.Loading && this.loaderscreen()}
-                <Table striped borderless responsive hover>
+                <div className={Styles.tablecontainer}>
+                <Table borderless hover>
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Username</th>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Added</th>
+                            <th class="time" >Action</th>
+                            <th class="sticky-header">Username</th>
+                            <th class="sticky-header">Name</th>
+                            <th class="sticky-header">Type</th>
+                            <th class="sticky-header">Added</th>
                         </tr>
                     </thead>
                     <tbody>
                         {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        {assets}
+                        
                     </tbody>
                 </Table>
+                </div>
                 <div className={Styles.paginationContainer} >
                     <div className={Styles.content}>
                     <Button >Prev</Button>
