@@ -34,13 +34,12 @@
     flex-grow: 10;
     flex: 1 1 auto;
     height: 100%;
-    margin-left: 200px;
     overflow-y: hidden !important;
     overflow-x: hidden !important;
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
     .content-wrapper{
-        margin-left: 0px;
+        margin-left: 200px;
         overflow-y: hidden !important;
         overflow-x: hidden !important;
     }
@@ -48,7 +47,7 @@
   
   @media screen and (max-width: 300px) {
     .content-wrapper{
-        margin-left: 200px;
+        margin-left: 0px;
         overflow-y: hidden !important;
         overflow-x: hidden !important;
     }
