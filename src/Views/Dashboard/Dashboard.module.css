@@ -19,15 +19,34 @@
     background: white;
     display: inline-block;
 }
+.icon-label {
+    order: 2
+}
 .user-side{
     display: flex;
     flex-direction: row;
     align-items: center;
-    
 }
 .logout-button {
+    order:3;
     margin-left: 40px;
     min-height: 40px;
+}
+
+.menu-button {
+    order:1;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.bar {
+    margin: auto;
+    position: relative;
+    height: 3px;
+    width: 100%;
+    background-color: black;
 }
 /* 730px */
 .content-wrapper{
@@ -37,24 +56,18 @@
     overflow-y: hidden !important;
     overflow-x: hidden !important;
 }
+
+/* desktop view */
 @media screen and (min-width: 700px) {
     .content-wrapper{
         margin-left: 200px;
         overflow-y: hidden !important;
         overflow-x: hidden !important;
     }
-  }
-  
-  @media screen and (max-width: 300px) {
-    .content-wrapper{
-        margin-left: 0px;
-        overflow-y: hidden !important;
-        overflow-x: hidden !important;
+    .menu-button {
+        display: none !important;
+        /* margin: 10000px; */
     }
-  }
-
-
-  @media only screen and (min-width: 700px) {
     .header{
         margin-left: 200px;
         overflow-y: hidden !important;
@@ -62,7 +75,14 @@
     }
   }
   
-  @media only screen and (max-width: 300px) {
+
+  /* mobile view */
+  @media screen and (max-width: 300px) {
+    .content-wrapper{
+        margin-left: 0px;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
     .header{
         margin-left: 0px;
         overflow-y: hidden !important;

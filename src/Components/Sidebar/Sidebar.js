@@ -3,11 +3,14 @@ import { NavLink } from 'react-router-dom'
 import Styles from './Sidebar.module.css'
 
 class Sidebar extends React.Component{
-  
+  constructor(props) {
+    super(props);
+  }
     render(){
+        const classSidebar = this.props.open === true ? Styles["sidebar-open"] : Styles["sidebar-close"];
         return(
             <React.Fragment>
-            <div className={Styles.sidebar}>
+            <div className={`${Styles.sidebar} ${classSidebar}`}>
             {this.props.routes.map((prop, key) => {
               if (!prop.redirect)
                 return (

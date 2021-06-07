@@ -10,11 +10,20 @@ const mql = window.matchMedia(`(min-width: 800px)`);
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      "sidebar":true
+    }
     this.logout = this.logout.bind(this);
+    this.sidebarToggle = this.sidebarToggle.bind(this);
 }
     logout(){
         eraseAllvalues();
         this.props.history.push('/');
+    }
+
+    sidebarToggle() {
+      let sidebar = this.state.sidebar;
+      this.setState({"sidebar":!sidebar});
     }
 
     getRoutes = routes => {
@@ -43,17 +52,22 @@ class Dashboard extends React.Component {
     }
 
 
-    render() {          
+    render() {
         return (
           <React.Fragment>
           <div className={Styles["body-wrapper"]}>
             <div className={Styles["sidebar-wrapper"]}>
-              <Sidebar routes={routes} />
+              <Sidebar open={this.state.sidebar} routes={routes} />
             </div>
             <div className={Styles["header"]}>
               <div className={Styles["user-side"]}>
-                <Label>Xoxo</Label>
+                <Label className={Styles["icon-label"]}>Xoxo</Label>
                 <Button className={Styles["logout-button"]} onClick={this.logout}>Logout</Button>
+                <div className={Styles["menu-button"]} onClick={this.sidebarToggle} aria-label="Left Align">
+                  <span className={Styles["bar"]}></span>
+                  <span className={Styles["bar"]}></span>
+                  <span className={Styles["bar"]}></span>
+                </div>
               </div>
             </div>
             <div className={Styles["content-wrapper"]} >
