@@ -53,10 +53,7 @@ class Profile extends React.Component{
                           <div className={Styles.text}>Change Photo</div>
                          </div>;
     return(
-      <div 
-          style={{
-            marginTop:"20px"
-          }}>
+      <div className={Styles.profileContainer}>
           <Form className={Styles.profile}>
           <div className={Styles.imageContainer}>
           <Row>
