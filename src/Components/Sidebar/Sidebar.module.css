@@ -13,8 +13,8 @@
     margin-bottom: 3px;
     transition: all 0.3s ease-in-out;
     text-decoration: none!important;
-    border-bottom-left-radius: 110px;  /* 100px of height + 10px of border */
-    border-top-left-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom-left-radius: 10px;  /* 100px of height + 10px of border */
+    border-top-left-radius: 10px; /* 100px of height + 10px of border */
     display: block ;
     color: rgb(139, 139, 139);
     padding: 12px;
@@ -25,8 +25,8 @@
     margin-left:10px;
     font-weight: bolder;
     background-clip: padding-box;
-    border-bottom-left-radius: 120px;  
-    border-top-left-radius: 110px; 
+    border-bottom-left-radius: 10px;  
+    border-top-left-radius: 10px; 
     box-shadow:  -5px 0 10px -2px rgba(0, 0, 0, 0.8) inset;
     background: rgb(211, 211, 211);
     color: #272525;
