@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      "sidebar":true
+      "sidebar":false
     }
     this.logout = this.logout.bind(this);
     this.sidebarToggle = this.sidebarToggle.bind(this);
