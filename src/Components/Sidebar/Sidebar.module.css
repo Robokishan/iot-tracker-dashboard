@@ -57,7 +57,7 @@
   @media screen and (max-width: 700px) {
     .sidebar-open {
       transition: opacity 0.4s ease-in-out;
-      display: block;
+      display: flex;
     }
     .sidebar-close {
       transition: opacity 0.4s ease-in-out;
