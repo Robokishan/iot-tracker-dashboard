@@ -11,7 +11,7 @@
 
 .sidebar a {
     margin-bottom: 3px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     text-decoration: none!important;
     border-bottom-left-radius: 10px;  /* 100px of height + 10px of border */
     border-top-left-radius: 10px; /* 100px of height + 10px of border */
