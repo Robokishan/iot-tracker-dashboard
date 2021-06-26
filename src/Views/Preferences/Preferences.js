@@ -286,7 +286,7 @@ class Setting extends React.Component {
                 </td>
                 <td>{asset.asset_username}</td>
                 <td>{asset.asset_name}</td>
-                <td>{asset.asset_type}</td>
+                <td><div className="scrollable" >{asset.asset_type}</div></td>
                 <td>{this.epochTodt(asset.added_on)}</td>
             </tr>
         )) : <td colSpan="4" align="center" >No Assets added</td>
