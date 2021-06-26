@@ -53,16 +53,17 @@ class Dashboard extends React.Component {
 
 
     render() {
+        let sidebarWrapper = this.state.sidebar === true ? Styles["sidebar-open"] : Styles["sidebar-close"];
         return (
           <React.Fragment>
           <div className={Styles["body-wrapper"]}>
-            <div className={Styles["sidebar-wrapper"]}>
-              <Sidebar open={this.state.sidebar} routes={routes} />
+            <div className={`${Styles['sidebar-wrapper']} ${sidebarWrapper}`}>
+              <Sidebar routes={routes} />
             </div>
             <div className={Styles["header"]}>
               <div className={Styles["user-side"]}>
                 <Label className={Styles["icon-label"]}>Xoxo</Label>
-                <Button className={Styles["logout-button"]} onClick={this.logout}>Logout</Button>
+                <Button color="danger" className={Styles["logout-button"]} onClick={this.logout}>Logout</Button>
                 <div className={Styles["menu-button"]} onClick={this.sidebarToggle} aria-label="Left Align">
                   <span className={Styles["bar"]}></span>
                   <span className={Styles["bar"]}></span>

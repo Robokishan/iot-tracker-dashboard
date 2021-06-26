@@ -7,7 +7,8 @@ class Sidebar extends React.Component{
     super(props);
   }
     render(){
-        const classSidebar = this.props.open === true ? Styles["sidebar-open"] : Styles["sidebar-close"];
+        // let classSidebar = this.props.open === true ? Styles["sidebar-open"] : Styles["sidebar-close"];
+        let classSidebar = Styles["sidebar-open"];
         return(
             <React.Fragment>
             <div className={`${Styles.sidebar} ${classSidebar}`}>
