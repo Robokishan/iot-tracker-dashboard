@@ -14,7 +14,7 @@
     position: relative;
     padding: 10px;
     overflow: hidden !important;
-    min-height: 70px;
+    min-height: 65px;
     z-index:200;
     background: white;
     display: inline-block;
